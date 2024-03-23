@@ -332,9 +332,9 @@ switch (currentSeason) {
 let setLocalChange = () => localStorage.setItem("CharlesChange", "true");
 let readLocalChange = () => localStorage.getItem("CharlesChange");
 let removeLocalChange = () => localStorage.removeItem("CharlesChange");
-
+document.querySelector(".fa-moon").addEventListener(onclick, change());
 let change = () => {
-  // console.log(currentSeason)
+  console.log(currentSeason);
   if (document.querySelector("body.change")) {
     switch (currentSeason) {
       case "Winter":
@@ -351,8 +351,7 @@ let change = () => {
         break;
     }
 
-    document.querySelector("[onclick='change()']").classList =
-      "icon fa-moon change";
+    document.querySelector(".fa-moon").classList = "icon fa-moon change";
   } else {
     switch (currentSeason) {
       case "Winter":
@@ -369,7 +368,7 @@ let change = () => {
         break;
     }
 
-    document.querySelector("[onclick='change()']").classList = "icon fa-sun";
+    document.querySelector(".fa-moon").classList = "icon fa-sun";
   }
   document.querySelector("#sidebar").classList.toggle("change");
   document.querySelector("#search.alt").classList.toggle("change");
